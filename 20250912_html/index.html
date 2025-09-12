@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./favicon-16x16.png"
+    />
+    <link rel="manifest" href="./site.webmanifest" />
+    <link rel="icon" href="./favicon.ico" />
+    <title>my html</title>
+    <!-- OG Tag -->
+    <!-- 1. title -->
+    <meta property="og:title" content="나의 첫 페이지" />
+    <!-- 2. description -->
+    <meta property="og:description" content="생성형 AI 백엔드 수업 첫 산출물" />
+    <!-- 3. image -->
+    <meta property="og:image" content="./preview.jpg" />
+  </head>
+  <body>
+    <!-- 태그, 엘리먼트, 주석 -->
+    <!-- 태그, 아무것도 없는 것 -->
+    <p></p>
+    <!-- 엘리먼트, 내용이 있는 것 -->
+    <p>엘리먼트</p>
+    <!-- 주석 : 페이지 운영에 영향을 주지 않은 메모 -->
+
+    <!-- 블럭 & 인라인 -->
+    <h2>블럭 태그1</h2>
+    <h2>블럭 태그2</h2>
+    <span>인라인 태그1</span>
+    <span>인라인 태그2</span>
+
+    <!-- 시맨틱 태그 -->
+    <header></header>
+    <nav></nav>
+    <main></main>
+    <section></section>
+    <article></article>
+    <footer></footer>
+
+    <!-- link & img -->
+
+    <!-- form -->
+
+    <!-- search test -->
+    <form
+      action="https://search.naver.com/search.naver"
+      style="background-color: rgb(188, 161, 231); padding: 5px"
+    >
+      <p>검색 엔진 - 네이버</p>
+      <input name="query" />
+      <div>
+        <input type="radio" name="ssc" value="tab.nx.all" id="ty1" />
+        <label for="ty1">전체</label>
+        <input type="radio" name="ssc" value="tab.blog.all" id="ty2" />
+        <label for="ty2">블로그</label>
+        <input type="radio" name="ssc" value="tab.news.all" id="ty3" />
+        <label for="ty3">뉴스</label>
+        <input type="radio" name="ssc" value="tab.cafe.all" id="ty4" />
+        <label for="ty4">카페</label>
+      </div>
+      <div>
+        <select name="nso">
+          <option value="so%3Add%2Cp%3Aall">최신순</option>
+          <option value="so%3Ar%2Cp%3Aall">관련도순</option>
+        </select>
+      </div>
+      <button>검색</button>
+    </form>
+  </body>
+</html>
