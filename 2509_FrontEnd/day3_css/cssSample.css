@@ -1,0 +1,60 @@
+.outCss {
+  color: yellowgreen;
+}
+
+section {
+  width: 100%;
+  height: auto;
+  padding: 20px 10px;
+  box-sizing: border-box;
+}
+
+h3,
+p {
+  margin: 0;
+  padding-bottom: 10px;
+}
+
+.boxModel {
+  height: 180px;
+}
+
+.boxModel div {
+  width: 150px;
+  height: 30px;
+  padding: 20px;
+  border: 2px solid #123456;
+  margin: 10px;
+  background: #ffff99;
+  float: left;
+}
+
+.boxModel .left {
+  box-sizing: content-box;
+}
+
+.boxModel .right {
+  box-sizing: border-box;
+}
+
+.display div {
+  width: 100px;
+  height: 20px;
+  border: 2px solid #250b6e;
+  background: #33a1fc;
+}
+
+.display .inline {
+  display: inline;
+  background: #33c257;
+}
+
+.display .inline-block {
+  display: inline-block;
+  background: #d82727;
+}
+
+.display .none {
+  display: none;
+  background: #a0ad2c;
+}
