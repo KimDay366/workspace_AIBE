@@ -1,0 +1,1249 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kim Day - Full Stack Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            animation: {
+              "fade-in": "fadeIn 0.6s ease-out",
+              "slide-up": "slideUp 0.8s ease-out",
+              "slide-right": "slideRight 0.8s ease-out",
+              "bounce-slow": "bounce 3s infinite",
+              float: "float 3s ease-in-out infinite",
+              gradient: "gradient 3s ease infinite",
+              "pulse-slow": "pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+              "spin-slow": "spin 20s linear infinite",
+              wiggle: "wiggle 1s ease-in-out infinite",
+            },
+            keyframes: {
+              fadeIn: {
+                "0%": { opacity: "0" },
+                "100%": { opacity: "1" },
+              },
+              slideUp: {
+                "0%": { opacity: "0", transform: "translateY(50px)" },
+                "100%": { opacity: "1", transform: "translateY(0)" },
+              },
+              slideRight: {
+                "0%": { opacity: "0", transform: "translateX(-50px)" },
+                "100%": { opacity: "1", transform: "translateX(0)" },
+              },
+              float: {
+                "0%, 100%": { transform: "translateY(0px)" },
+                "50%": { transform: "translateY(-20px)" },
+              },
+              gradient: {
+                "0%, 100%": { "background-position": "0% 50%" },
+                "50%": { "background-position": "100% 50%" },
+              },
+              wiggle: {
+                "0%, 100%": { transform: "rotate(-3deg)" },
+                "50%": { transform: "rotate(3deg)" },
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .gradient-bg {
+        background: linear-gradient(
+          -45deg,
+          #667eea,
+          #764ba2,
+          #f093fb,
+          #f5576c,
+          #4facfe,
+          #00f2fe
+        );
+        background-size: 400% 400%;
+        animation: gradient 15s ease infinite;
+      }
+      .glass {
+        backdrop-filter: blur(16px) saturate(180%);
+        background-color: rgba(17, 25, 40, 0.75);
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.125);
+      }
+      .text-gradient {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-900 text-white overflow-x-hidden">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass border-b border-white/10">
+      <div class="container mx-auto px-6 py-4">
+        <div class="flex justify-between items-center">
+          <div class="text-2xl font-bold text-gradient">KimDay.dev</div>
+          <div class="hidden md:flex space-x-8">
+            <a
+              href="#home"
+              class="hover:text-blue-400 transition-colors duration-300"
+              >Home</a
+            >
+            <a
+              href="#about"
+              class="hover:text-blue-400 transition-colors duration-300"
+              >About</a
+            >
+            <a
+              href="#skills"
+              class="hover:text-blue-400 transition-colors duration-300"
+              >Skills</a
+            >
+            <a
+              href="#projects"
+              class="hover:text-blue-400 transition-colors duration-300"
+              >Projects</a
+            >
+            <a
+              href="#experience"
+              class="hover:text-blue-400 transition-colors duration-300"
+              >Experience</a
+            >
+            <a
+              href="#contact"
+              class="hover:text-blue-400 transition-colors duration-300"
+              >Contact</a
+            >
+          </div>
+          <div class="md:hidden">
+            <button onclick="toggleMenu()" class="text-white">☰</button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section
+      id="home"
+      class="min-h-screen gradient-bg flex items-center justify-center relative"
+    >
+      <div class="absolute inset-0 bg-black bg-opacity-30"></div>
+
+      <!-- Floating geometric shapes -->
+      <div
+        class="absolute top-20 left-20 w-32 h-32 bg-blue-400 bg-opacity-20 rounded-full animate-float"
+      ></div>
+      <div
+        class="absolute top-40 right-32 w-24 h-24 bg-pink-400 bg-opacity-30 rounded-lg animate-float rotate-45"
+        style="animation-delay: 1s"
+      ></div>
+      <div
+        class="absolute bottom-40 left-32 w-28 h-28 bg-purple-400 bg-opacity-25 rounded-full animate-float"
+        style="animation-delay: 2s"
+      ></div>
+      <div
+        class="absolute bottom-20 right-20 w-20 h-20 bg-green-400 bg-opacity-30 rounded-lg animate-spin-slow"
+      ></div>
+
+      <div class="container mx-auto px-6 text-center relative z-10">
+        <div class="animate-slide-up">
+          <div class="mb-6">
+            <div
+              class="w-32 h-32 mx-auto mb-8 rounded-full bg-gradient-to-r from-blue-400 to-purple-500 p-1"
+            >
+              <div
+                class="w-full h-full rounded-full bg-gray-900 flex items-center justify-center text-6xl animate-bounce-slow"
+              >
+                👨‍💻
+              </div>
+            </div>
+          </div>
+
+          <h1 class="text-6xl md:text-8xl font-bold mb-6">
+            <span
+              class="bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-200 to-purple-200 animate-pulse-slow"
+            >
+              안녕하세요!
+            </span>
+          </h1>
+
+          <div class="text-2xl md:text-4xl font-semibold mb-6 text-blue-100">
+            <span class="animate-wiggle inline-block">🚀</span> Full Stack
+            Developer
+            <span
+              class="animate-wiggle inline-block"
+              style="animation-delay: 0.5s"
+              >✨</span
+            >
+          </div>
+
+          <p
+            class="text-xl md:text-2xl mb-8 text-blue-100 max-w-4xl mx-auto leading-relaxed"
+          >
+            다양한 아이디어를 조합하고, 이를 바탕으로 구체적인 서비스로 구현하는
+            것을 좋아하는 개발자입니다
+          </p>
+
+          <div
+            class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8 max-w-2xl mx-auto"
+          >
+            <div class="glass p-4 rounded-2xl text-center animate-bounce-slow">
+              <div class="text-2xl mb-2">💡</div>
+              <div class="text-sm">아이디어 발굴</div>
+            </div>
+            <div
+              class="glass p-4 rounded-2xl text-center animate-bounce-slow"
+              style="animation-delay: 0.5s"
+            >
+              <div class="text-2xl mb-2">🎯</div>
+              <div class="text-sm">꼼꼼한 기획</div>
+            </div>
+            <div
+              class="glass p-4 rounded-2xl text-center animate-bounce-slow"
+              style="animation-delay: 1s"
+            >
+              <div class="text-2xl mb-2">⚡</div>
+              <div class="text-sm">빠른 실행</div>
+            </div>
+            <div
+              class="glass p-4 rounded-2xl text-center animate-bounce-slow"
+              style="animation-delay: 1.5s"
+            >
+              <div class="text-2xl mb-2">🚀</div>
+              <div class="text-sm">지속적 성장</div>
+            </div>
+          </div>
+
+          <div
+            class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6"
+          >
+            <button
+              onclick="scrollToSection('projects')"
+              class="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-full font-bold text-lg hover:scale-110 transform transition-all duration-300 shadow-2xl hover:shadow-purple-500/50"
+            >
+              프로젝트 보기 🎨
+            </button>
+            <button
+              onclick="scrollToSection('contact')"
+              class="border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-gray-900 transform transition-all duration-300"
+            >
+              연락하기 📞
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-800 relative">
+      <div class="container mx-auto px-6">
+        <h2
+          class="text-5xl font-bold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400"
+        >
+          About Me
+        </h2>
+
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div class="animate-slide-right">
+            <div class="relative">
+              <div class="glass p-8 rounded-3xl shadow-2xl">
+                <h3 class="text-3xl font-bold mb-6 text-gradient">
+                  개발자의 철학
+                </h3>
+                <p class="text-lg leading-relaxed text-gray-300 mb-6">
+                  꼼꼼하고 섬세하게 기획하여 다소 느린 편이지만, 그만큼 꾸준히
+                  노력해 나가는 스타일입니다. 사용자 중심의 서비스를 만들어가며,
+                  기술과 창의성을 결합한 솔루션을 제공하는 것을 목표로 합니다.
+                </p>
+                <div class="flex flex-wrap gap-3">
+                  <span class="bg-blue-600 px-4 py-2 rounded-full text-sm"
+                    >사용자 중심 설계</span
+                  >
+                  <span class="bg-purple-600 px-4 py-2 rounded-full text-sm"
+                    >창의적 문제해결</span
+                  >
+                  <span class="bg-pink-600 px-4 py-2 rounded-full text-sm"
+                    >지속적 학습</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="animate-slide-up">
+            <div class="grid grid-cols-2 gap-6">
+              <div
+                class="glass p-6 rounded-2xl text-center hover:scale-105 transform transition-all duration-300"
+              >
+                <div class="text-4xl mb-4">🎨</div>
+                <h4 class="text-xl font-bold mb-2">Creative</h4>
+                <p class="text-gray-300 text-sm">
+                  혁신적인 아이디어로 문제를 해결합니다
+                </p>
+              </div>
+              <div
+                class="glass p-6 rounded-2xl text-center hover:scale-105 transform transition-all duration-300"
+              >
+                <div class="text-4xl mb-4">⚡</div>
+                <h4 class="text-xl font-bold mb-2">Efficient</h4>
+                <p class="text-gray-300 text-sm">
+                  최적화된 솔루션을 제공합니다
+                </p>
+              </div>
+              <div
+                class="glass p-6 rounded-2xl text-center hover:scale-105 transform transition-all duration-300"
+              >
+                <div class="text-4xl mb-4">🤝</div>
+                <h4 class="text-xl font-bold mb-2">Collaborative</h4>
+                <p class="text-gray-300 text-sm">
+                  팀워크를 중시하며 소통합니다
+                </p>
+              </div>
+              <div
+                class="glass p-6 rounded-2xl text-center hover:scale-105 transform transition-all duration-300"
+              >
+                <div class="text-4xl mb-4">📈</div>
+                <h4 class="text-xl font-bold mb-2">Growth</h4>
+                <p class="text-gray-300 text-sm">
+                  끊임없이 성장하고 발전합니다
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience & Timeline -->
+    <section id="experience" class="py-20 bg-gray-900">
+      <div class="container mx-auto px-6">
+        <h2
+          class="text-5xl font-bold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 via-orange-400 to-red-400"
+        >
+          경험 & 성장 과정
+        </h2>
+
+        <div class="max-w-4xl mx-auto">
+          <div class="relative">
+            <!-- Timeline line -->
+            <div
+              class="absolute left-1/2 transform -translate-x-px h-full w-0.5 bg-gradient-to-b from-blue-400 to-purple-600"
+            ></div>
+
+            <!-- Timeline items -->
+            <div class="space-y-12">
+              <div class="relative flex items-center">
+                <div class="flex-1 pr-8 text-right">
+                  <div
+                    class="glass p-6 rounded-2xl hover:scale-105 transform transition-all duration-300"
+                  >
+                    <h3 class="text-xl font-bold text-blue-400 mb-2">
+                      풀스택 개발 시작
+                    </h3>
+                    <p class="text-gray-300 mb-3">
+                      웹 개발의 전반적인 과정을 이해하고 프론트엔드부터
+                      백엔드까지 학습
+                    </p>
+                    <span class="text-sm text-gray-400">2023년 초</span>
+                  </div>
+                </div>
+                <div
+                  class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-blue-400 rounded-full border-4 border-gray-900"
+                ></div>
+                <div class="flex-1 pl-8"></div>
+              </div>
+
+              <div class="relative flex items-center">
+                <div class="flex-1 pr-8"></div>
+                <div
+                  class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-purple-400 rounded-full border-4 border-gray-900"
+                ></div>
+                <div class="flex-1 pl-8">
+                  <div
+                    class="glass p-6 rounded-2xl hover:scale-105 transform transition-all duration-300"
+                  >
+                    <h3 class="text-xl font-bold text-purple-400 mb-2">
+                      프로젝트 기획 능력 개발
+                    </h3>
+                    <p class="text-gray-300 mb-3">
+                      사용자 중심의 서비스 설계와 체계적인 개발 프로세스 구축
+                    </p>
+                    <span class="text-sm text-gray-400">2023년 중반</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="relative flex items-center">
+                <div class="flex-1 pr-8 text-right">
+                  <div
+                    class="glass p-6 rounded-2xl hover:scale-105 transform transition-all duration-300"
+                  >
+                    <h3 class="text-xl font-bold text-green-400 mb-2">
+                      클라우드 & DevOps
+                    </h3>
+                    <p class="text-gray-300 mb-3">
+                      AWS 클라우드 서비스와 컨테이너화, CI/CD 파이프라인 구축
+                      경험
+                    </p>
+                    <span class="text-sm text-gray-400">2023년 말</span>
+                  </div>
+                </div>
+                <div
+                  class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-green-400 rounded-full border-4 border-gray-900"
+                ></div>
+                <div class="flex-1 pl-8"></div>
+              </div>
+
+              <div class="relative flex items-center">
+                <div class="flex-1 pr-8"></div>
+                <div
+                  class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-yellow-400 rounded-full border-4 border-gray-900"
+                ></div>
+                <div class="flex-1 pl-8">
+                  <div
+                    class="glass p-6 rounded-2xl hover:scale-105 transform transition-all duration-300"
+                  >
+                    <h3 class="text-xl font-bold text-yellow-400 mb-2">
+                      AI/ML 통합 서비스
+                    </h3>
+                    <p class="text-gray-300 mb-3">
+                      머신러닝과 AI를 활용한 개인화 추천 시스템 개발 및 적용
+                    </p>
+                    <span class="text-sm text-gray-400">2024년 현재</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Statistics -->
+    <section class="py-20 bg-gray-800">
+      <div class="container mx-auto px-6">
+        <h2 class="text-4xl font-bold text-center mb-16 text-white">
+          개발 현황
+        </h2>
+        <div class="grid md:grid-cols-4 gap-8 text-center">
+          <div
+            class="glass p-8 rounded-3xl hover:scale-110 transform transition-all duration-500"
+          >
+            <div
+              class="text-4xl font-bold text-blue-400 mb-2 counter"
+              data-target="15"
+            >
+              0
+            </div>
+            <div class="text-gray-300">완료한 프로젝트</div>
+          </div>
+          <div
+            class="glass p-8 rounded-3xl hover:scale-110 transform transition-all duration-500"
+          >
+            <div
+              class="text-4xl font-bold text-green-400 mb-2 counter"
+              data-target="1200"
+            >
+              0
+            </div>
+            <div class="text-gray-300">작성한 코드 라인</div>
+          </div>
+          <div
+            class="glass p-8 rounded-3xl hover:scale-110 transform transition-all duration-500"
+          >
+            <div
+              class="text-4xl font-bold text-purple-400 mb-2 counter"
+              data-target="50"
+            >
+              0
+            </div>
+            <div class="text-gray-300">사용한 기술 스택</div>
+          </div>
+          <div
+            class="glass p-8 rounded-3xl hover:scale-110 transform transition-all duration-500"
+          >
+            <div
+              class="text-4xl font-bold text-pink-400 mb-2 counter"
+              data-target="365"
+            >
+              0
+            </div>
+            <div class="text-gray-300">개발한 날들</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-20 bg-gray-900">
+      <div class="container mx-auto px-6">
+        <h2
+          class="text-4xl font-bold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-400"
+        >
+          동료들의 평가
+        </h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div
+            class="glass p-8 rounded-3xl hover:scale-105 transform transition-all duration-500"
+          >
+            <div class="flex mb-4">
+              <span class="text-yellow-400 text-2xl">★★★★★</span>
+            </div>
+            <p class="text-gray-300 mb-6 italic">
+              "아이디어를 구체적인 서비스로 구현하는 능력이 정말 뛰어납니다.
+              체계적인 접근법이 인상적이에요."
+            </p>
+            <div class="flex items-center">
+              <div
+                class="w-12 h-12 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full flex items-center justify-center text-2xl mr-4"
+              >
+                👨‍💼
+              </div>
+              <div>
+                <div class="font-bold">김개발</div>
+                <div class="text-sm text-gray-400">시니어 개발자</div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="glass p-8 rounded-3xl hover:scale-105 transform transition-all duration-500"
+          >
+            <div class="flex mb-4">
+              <span class="text-yellow-400 text-2xl">★★★★★</span>
+            </div>
+            <p class="text-gray-300 mb-6 italic">
+              "꼼꼼하고 세심한 기획력이 돋보입니다. 사용자 경험을 깊이 고려한
+              서비스를 만드시네요."
+            </p>
+            <div class="flex items-center">
+              <div
+                class="w-12 h-12 bg-gradient-to-r from-pink-400 to-red-500 rounded-full flex items-center justify-center text-2xl mr-4"
+              >
+                👩‍💻
+              </div>
+              <div>
+                <div class="font-bold">이기획</div>
+                <div class="text-sm text-gray-400">UX/UI 디자이너</div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="glass p-8 rounded-3xl hover:scale-105 transform transition-all duration-500"
+          >
+            <div class="flex mb-4">
+              <span class="text-yellow-400 text-2xl">★★★★★</span>
+            </div>
+            <p class="text-gray-300 mb-6 italic">
+              "지속적으로 학습하고 성장하는 모습이 인상적입니다. 팀워크도
+              뛰어나시고요."
+            </p>
+            <div class="flex items-center">
+              <div
+                class="w-12 h-12 bg-gradient-to-r from-green-400 to-teal-500 rounded-full flex items-center justify-center text-2xl mr-4"
+              >
+                👨‍🎓
+              </div>
+              <div>
+                <div class="font-bold">박팀장</div>
+                <div class="text-sm text-gray-400">프로젝트 매니저</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog/Articles Section -->
+    <section class="py-20 bg-gray-800">
+      <div class="container mx-auto px-6">
+        <h2
+          class="text-4xl font-bold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 to-purple-400"
+        >
+          최근 개발 인사이트
+        </h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <article
+            class="glass rounded-3xl overflow-hidden hover:scale-105 transform transition-all duration-500"
+          >
+            <div
+              class="h-48 bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-6xl"
+            >
+              🚀
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-3 text-blue-400">
+                Next.js 14의 새로운 기능들
+              </h3>
+              <p class="text-gray-300 text-sm mb-4">
+                App Router와 Server Components를 활용한 현대적인 웹 개발
+                방법론에 대해 알아봅시다.
+              </p>
+              <div class="flex justify-between items-center">
+                <span class="text-xs text-gray-400">2024.01.15</span>
+                <button class="text-blue-400 text-sm hover:underline">
+                  더 읽기 →
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article
+            class="glass rounded-3xl overflow-hidden hover:scale-105 transform transition-all duration-500"
+          >
+            <div
+              class="h-48 bg-gradient-to-br from-green-500 to-teal-600 flex items-center justify-center text-6xl"
+            >
+              🤖
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-3 text-green-400">
+                AI를 활용한 개발 생산성 향상
+              </h3>
+              <p class="text-gray-300 text-sm mb-4">
+                GitHub Copilot과 ChatGPT를 개발 워크플로우에 통합하여 효율성을
+                높이는 방법을 소개합니다.
+              </p>
+              <div class="flex justify-between items-center">
+                <span class="text-xs text-gray-400">2024.01.10</span>
+                <button class="text-green-400 text-sm hover:underline">
+                  더 읽기 →
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article
+            class="glass rounded-3xl overflow-hidden hover:scale-105 transform transition-all duration-500"
+          >
+            <div
+              class="h-48 bg-gradient-to-br from-purple-500 to-pink-600 flex items-center justify-center text-6xl"
+            >
+              ☁️
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-3 text-purple-400">
+                서버리스 아키텍처의 실전 적용
+              </h3>
+              <p class="text-gray-300 text-sm mb-4">
+                AWS Lambda와 Vercel을 활용한 확장 가능한 백엔드 구축 경험을
+                공유합니다.
+              </p>
+              <div class="flex justify-between items-center">
+                <span class="text-xs text-gray-400">2024.01.05</span>
+                <button class="text-purple-400 text-sm hover:underline">
+                  더 읽기 →
+                </button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-900 relative">
+      <div
+        class="absolute inset-0 bg-gradient-to-br from-blue-900/20 to-purple-900/20"
+      ></div>
+      <div class="container mx-auto px-6 relative z-10">
+        <h2
+          class="text-5xl font-bold text-center mb-8 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400"
+        >
+          함께 만들어가요!
+        </h2>
+        <p class="text-xl text-center text-gray-300 mb-16 max-w-2xl mx-auto">
+          새로운 아이디어가 있으시거나 함께 프로젝트를 진행하고 싶으시다면
+          언제든 연락주세요. 창의적인 솔루션으로 문제를 해결해드리겠습니다!
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+          <!-- Contact Form -->
+          <div class="glass p-8 rounded-3xl">
+            <h3 class="text-2xl font-bold mb-6 text-gradient">메시지 보내기</h3>
+            <form class="space-y-6">
+              <div>
+                <label class="block text-sm font-semibold text-gray-300 mb-2"
+                  >이름</label
+                >
+                <input
+                  type="text"
+                  class="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-3 text-white focus:border-blue-400 focus:outline-none transition-colors duration-300"
+                />
+              </div>
+              <div>
+                <label class="block text-sm font-semibold text-gray-300 mb-2"
+                  >이메일</label
+                >
+                <input
+                  type="email"
+                  class="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-3 text-white focus:border-blue-400 focus:outline-none transition-colors duration-300"
+                />
+              </div>
+              <div>
+                <label class="block text-sm font-semibold text-gray-300 mb-2"
+                  >프로젝트 종류</label
+                >
+                <select
+                  class="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-3 text-white focus:border-blue-400 focus:outline-none transition-colors duration-300"
+                >
+                  <option>웹 애플리케이션 개발</option>
+                  <option>모바일 앱 개발</option>
+                  <option>AI/ML 솔루션</option>
+                  <option>클라우드 인프라</option>
+                  <option>컨설팅</option>
+                  <option>기타</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-sm font-semibold text-gray-300 mb-2"
+                  >메시지</label
+                >
+                <textarea
+                  rows="5"
+                  class="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-3 text-white focus:border-blue-400 focus:outline-none transition-colors duration-300 resize-none"
+                ></textarea>
+              </div>
+              <button
+                type="submit"
+                class="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-4 rounded-xl font-bold text-lg hover:scale-105 transform transition-all duration-300 shadow-2xl hover:shadow-blue-500/25"
+              >
+                프로젝트 제안하기 🚀
+              </button>
+            </form>
+          </div>
+
+          <!-- Contact Info -->
+          <div class="space-y-6">
+            <div
+              class="glass p-6 rounded-2xl hover:scale-105 transform transition-all duration-300"
+            >
+              <div class="flex items-center">
+                <div
+                  class="w-14 h-14 bg-blue-600 rounded-full flex items-center justify-center text-2xl mr-4"
+                >
+                  📧
+                </div>
+                <div>
+                  <h4 class="font-bold text-blue-400">이메일</h4>
+                  <p class="text-gray-300">kimday.dev@example.com</p>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="glass p-6 rounded-2xl hover:scale-105 transform transition-all duration-300"
+            >
+              <div class="flex items-center">
+                <div
+                  class="w-14 h-14 bg-purple-600 rounded-full flex items-center justify-center text-2xl mr-4"
+                >
+                  💼
+                </div>
+                <div>
+                  <h4 class="font-bold text-purple-400">링크드인</h4>
+                  <p class="text-gray-300">linkedin.com/in/kimday</p>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="glass p-6 rounded-2xl hover:scale-105 transform transition-all duration-300"
+            >
+              <div class="flex items-center">
+                <div
+                  class="w-14 h-14 bg-green-600 rounded-full flex items-center justify-center text-2xl mr-4"
+                >
+                  🐱
+                </div>
+                <div>
+                  <h4 class="font-bold text-green-400">깃허브</h4>
+                  <p class="text-gray-300">github.com/kimday366</p>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="glass p-6 rounded-2xl hover:scale-105 transform transition-all duration-300"
+            >
+              <div class="flex items-center">
+                <div
+                  class="w-14 h-14 bg-yellow-600 rounded-full flex items-center justify-center text-2xl mr-4"
+                >
+                  ⚡
+                </div>
+                <div>
+                  <h4 class="font-bold text-yellow-400">응답 시간</h4>
+                  <p class="text-gray-300">보통 24시간 이내</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Quick Stats -->
+            <div class="glass p-6 rounded-2xl">
+              <h4 class="font-bold text-gradient mb-4">빠른 현황</h4>
+              <div class="space-y-3">
+                <div class="flex justify-between">
+                  <span class="text-gray-300">현재 상태:</span>
+                  <span class="text-green-400 font-semibold"
+                    >프로젝트 진행 가능</span
+                  >
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-gray-300">선호 프로젝트:</span>
+                  <span class="text-blue-400 font-semibold"
+                    >웹 애플리케이션</span
+                  >
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-gray-300">협업 스타일:</span>
+                  <span class="text-purple-400 font-semibold"
+                    >애자일 방법론</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-gray-950 relative">
+      <div class="container mx-auto px-6">
+        <div class="grid md:grid-cols-4 gap-8 mb-8">
+          <div>
+            <div class="text-3xl font-bold text-gradient mb-4">KimDay.dev</div>
+            <p class="text-gray-400 text-sm">
+              혁신적인 아이디어를 현실로 만드는 풀스택 개발자
+            </p>
+          </div>
+
+          <div>
+            <h4 class="font-bold text-white mb-4">빠른 링크</h4>
+            <ul class="space-y-2 text-sm text-gray-400">
+              <li>
+                <a
+                  href="#about"
+                  class="hover:text-blue-400 transition-colors duration-300"
+                  >소개</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#skills"
+                  class="hover:text-blue-400 transition-colors duration-300"
+                  >기술 스택</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#projects"
+                  class="hover:text-blue-400 transition-colors duration-300"
+                  >프로젝트</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#contact"
+                  class="hover:text-blue-400 transition-colors duration-300"
+                  >연락처</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="font-bold text-white mb-4">서비스</h4>
+            <ul class="space-y-2 text-sm text-gray-400">
+              <li>웹 애플리케이션 개발</li>
+              <li>AI/ML 솔루션</li>
+              <li>클라우드 아키텍처</li>
+              <li>기술 컨설팅</li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="font-bold text-white mb-4">소셜 미디어</h4>
+            <div class="flex space-x-4">
+              <div
+                class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center hover:scale-110 transform transition-all duration-300 cursor-pointer"
+              >
+                📧
+              </div>
+              <div
+                class="w-10 h-10 bg-purple-600 rounded-full flex items-center justify-center hover:scale-110 transform transition-all duration-300 cursor-pointer"
+              >
+                💼
+              </div>
+              <div
+                class="w-10 h-10 bg-green-600 rounded-full flex items-center justify-center hover:scale-110 transform transition-all duration-300 cursor-pointer"
+              >
+                🐱
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="border-t border-gray-800 pt-8 text-center text-gray-400 text-sm"
+        >
+          <p>&copy; 2024 KimDay.dev - Made with 💜 and Tailwind CSS</p>
+          <p class="mt-2">
+            끊임없는 학습과 성장으로 더 나은 세상을 만들어갑니다 ✨
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-gray-900">
+      <div class="container mx-auto px-6">
+        <h2
+          class="text-5xl font-bold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-blue-400"
+        >
+          Skills & Technologies
+        </h2>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- Frontend -->
+          <div
+            class="glass p-8 rounded-3xl hover:scale-105 transform transition-all duration-500"
+          >
+            <h3 class="text-2xl font-bold mb-6 text-blue-400 flex items-center">
+              <span class="text-3xl mr-3">🎨</span> Frontend
+            </h3>
+            <div class="space-y-4">
+              <div class="skill-item">
+                <div class="flex justify-between mb-2">
+                  <span>React / Next.js</span>
+                  <span>90%</span>
+                </div>
+                <div class="w-full bg-gray-700 rounded-full h-3">
+                  <div
+                    class="bg-gradient-to-r from-blue-400 to-blue-600 h-3 rounded-full animate-pulse"
+                    style="width: 90%"
+                  ></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="flex justify-between mb-2">
+                  <span>TypeScript</span>
+                  <span>85%</span>
+                </div>
+                <div class="w-full bg-gray-700 rounded-full h-3">
+                  <div
+                    class="bg-gradient-to-r from-blue-400 to-blue-600 h-3 rounded-full animate-pulse"
+                    style="width: 85%"
+                  ></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="flex justify-between mb-2">
+                  <span>Tailwind CSS</span>
+                  <span>95%</span>
+                </div>
+                <div class="w-full bg-gray-700 rounded-full h-3">
+                  <div
+                    class="bg-gradient-to-r from-blue-400 to-blue-600 h-3 rounded-full animate-pulse"
+                    style="width: 95%"
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Backend -->
+          <div
+            class="glass p-8 rounded-3xl hover:scale-105 transform transition-all duration-500"
+          >
+            <h3
+              class="text-2xl font-bold mb-6 text-green-400 flex items-center"
+            >
+              <span class="text-3xl mr-3">⚙️</span> Backend
+            </h3>
+            <div class="space-y-4">
+              <div class="skill-item">
+                <div class="flex justify-between mb-2">
+                  <span>Node.js / Express</span>
+                  <span>88%</span>
+                </div>
+                <div class="w-full bg-gray-700 rounded-full h-3">
+                  <div
+                    class="bg-gradient-to-r from-green-400 to-green-600 h-3 rounded-full animate-pulse"
+                    style="width: 88%"
+                  ></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="flex justify-between mb-2">
+                  <span>Python / Django</span>
+                  <span>80%</span>
+                </div>
+                <div class="w-full bg-gray-700 rounded-full h-3">
+                  <div
+                    class="bg-gradient-to-r from-green-400 to-green-600 h-3 rounded-full animate-pulse"
+                    style="width: 80%"
+                  ></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="flex justify-between mb-2">
+                  <span>Database (SQL/NoSQL)</span>
+                  <span>82%</span>
+                </div>
+                <div class="w-full bg-gray-700 rounded-full h-3">
+                  <div
+                    class="bg-gradient-to-r from-green-400 to-green-600 h-3 rounded-full animate-pulse"
+                    style="width: 82%"
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- DevOps & Tools -->
+          <div
+            class="glass p-8 rounded-3xl hover:scale-105 transform transition-all duration-500"
+          >
+            <h3
+              class="text-2xl font-bold mb-6 text-purple-400 flex items-center"
+            >
+              <span class="text-3xl mr-3">☁️</span> DevOps
+            </h3>
+            <div class="space-y-4">
+              <div class="skill-item">
+                <div class="flex justify-between mb-2">
+                  <span>AWS / Cloud</span>
+                  <span>85%</span>
+                </div>
+                <div class="w-full bg-gray-700 rounded-full h-3">
+                  <div
+                    class="bg-gradient-to-r from-purple-400 to-purple-600 h-3 rounded-full animate-pulse"
+                    style="width: 85%"
+                  ></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="flex justify-between mb-2">
+                  <span>Docker / K8s</span>
+                  <span>75%</span>
+                </div>
+                <div class="w-full bg-gray-700 rounded-full h-3">
+                  <div
+                    class="bg-gradient-to-r from-purple-400 to-purple-600 h-3 rounded-full animate-pulse"
+                    style="width: 75%"
+                  ></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="flex justify-between mb-2">
+                  <span>CI/CD</span>
+                  <span>78%</span>
+                </div>
+                <div class="w-full bg-gray-700 rounded-full h-3">
+                  <div
+                    class="bg-gradient-to-r from-purple-400 to-purple-600 h-3 rounded-full animate-pulse"
+                    style="width: 78%"
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-gray-800">
+      <div class="container mx-auto px-6">
+        <h2
+          class="text-5xl font-bold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-r from-pink-400 via-purple-400 to-indigo-400"
+        >
+          프로젝트 아이디어
+        </h2>
+
+        <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-8">
+          <!-- Project 1 -->
+          <div class="project-card group relative">
+            <div
+              class="absolute -inset-0.5 bg-gradient-to-r from-purple-600 to-blue-600 rounded-3xl blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"
+            ></div>
+            <div
+              class="relative bg-gray-900 rounded-3xl p-8 hover:scale-105 transform transition-all duration-500"
+            >
+              <div class="text-6xl mb-6 animate-bounce-slow">🌍</div>
+              <h3
+                class="text-2xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-400"
+              >
+                여행지 추천 서비스
+              </h3>
+              <p class="text-gray-300 leading-relaxed mb-6">
+                사용자의 취향이나 성향을 기반으로 여행지를 추천하는 개인화된
+                서비스입니다. 머신러닝 알고리즘을 활용하여 사용자별 맞춤 여행
+                코스를 제공합니다.
+              </p>
+              <div class="mb-6">
+                <h4 class="text-sm font-semibold mb-3 text-blue-400">
+                  주요 기능
+                </h4>
+                <ul class="text-sm text-gray-400 space-y-1">
+                  <li>• AI 기반 개인화 추천</li>
+                  <li>• 실시간 리뷰 및 평점 시스템</li>
+                  <li>• 소셜 여행 계획 공유</li>
+                  <li>• 예산 맞춤 코스 생성</li>
+                </ul>
+              </div>
+              <div class="flex flex-wrap gap-2 mb-6">
+                <span
+                  class="bg-blue-600/20 border border-blue-600/30 px-3 py-1 rounded-full text-xs text-blue-300"
+                  >React</span
+                >
+                <span
+                  class="bg-purple-600/20 border border-purple-600/30 px-3 py-1 rounded-full text-xs text-purple-300"
+                  >Python</span
+                >
+                <span
+                  class="bg-green-600/20 border border-green-600/30 px-3 py-1 rounded-full text-xs text-green-300"
+                  >ML/AI</span
+                >
+                <span
+                  class="bg-yellow-600/20 border border-yellow-600/30 px-3 py-1 rounded-full text-xs text-yellow-300"
+                  >MongoDB</span
+                >
+              </div>
+              <button
+                class="w-full bg-gradient-to-r from-purple-600 to-blue-600 text-white py-3 rounded-xl font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-300"
+              >
+                프로젝트 상세보기 →
+              </button>
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div class="project-card group relative">
+            <div
+              class="absolute -inset-0.5 bg-gradient-to-r from-pink-600 to-red-600 rounded-3xl blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"
+            ></div>
+            <div
+              class="relative bg-gray-900 rounded-3xl p-8 hover:scale-105 transform transition-all duration-500"
+            >
+              <div
+                class="text-6xl mb-6 animate-bounce-slow"
+                style="animation-delay: 0.2s"
+              >
+                🤝
+              </div>
+              <h3
+                class="text-2xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-pink-400 to-red-400"
+              >
+                재능 매칭 플랫폼
+              </h3>
+              <p class="text-gray-300 leading-relaxed mb-6">
+                개인의 재능과 스킬을 등록하고 필요한 서비스를 찾는 사람들과
+                매칭해주는 종합 플랫폼입니다. 실시간 채팅과 스마트 매칭으로
+                완벽한 파트너를 찾아드립니다.
+              </p>
+              <div class="mb-6">
+                <h4 class="text-sm font-semibold mb-3 text-pink-400">
+                  주요 기능
+                </h4>
+                <ul class="text-sm text-gray-400 space-y-1">
+                  <li>• 스킬 기반 스마트 매칭</li>
+                  <li>• 실시간 채팅 및 화상통화</li>
+                  <li>• 포트폴리오 및 평점 시스템</li>
+                  <li>• 통합 결제 및 예약 관리</li>
+                </ul>
+              </div>
+              <div class="flex flex-wrap gap-2 mb-6">
+                <span
+                  class="bg-pink-600/20 border border-pink-600/30 px-3 py-1 rounded-full text-xs text-pink-300"
+                  >Next.js</span
+                >
+                <span
+                  class="bg-red-600/20 border border-red-600/30 px-3 py-1 rounded-full text-xs text-red-300"
+                  >Socket.io</span
+                >
+                <span
+                  class="bg-blue-600/20 border border-blue-600/30 px-3 py-1 rounded-full text-xs text-blue-300"
+                  >PostgreSQL</span
+                >
+                <span
+                  class="bg-green-600/20 border border-green-600/30 px-3 py-1 rounded-full text-xs text-green-300"
+                  >Stripe</span
+                >
+              </div>
+              <button
+                class="w-full bg-gradient-to-r from-pink-600 to-red-600 text-white py-3 rounded-xl font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-300"
+              >
+                프로젝트 상세보기 →
+              </button>
+            </div>
+          </div>
+
+          <!-- Project 3 -->
+          <div class="project-card group relative">
+            <div
+              class="absolute -inset-0.5 bg-gradient-to-r from-green-600 to-teal-600 rounded-3xl blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"
+            ></div>
+            <div
+              class="relative bg-gray-900 rounded-3xl p-8 hover:scale-105 transform transition-all duration-500"
+            >
+              <div
+                class="text-6xl mb-6 animate-bounce-slow"
+                style="animation-delay: 0.4s"
+              >
+                ☁️
+              </div>
+              <h3
+                class="text-2xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-teal-400"
+              >
+                클라우드 인프라 프로젝트
+              </h3>
+              <p class="text-gray-300 leading-relaxed mb-6">
+                AWS 클라우드 환경에서 확장 가능한 웹 애플리케이션을 배포하고
+                운영하는 DevOps 프로젝트입니다. 마이크로서비스 아키텍처와
+                컨테이너화를 적용합니다.
+              </p>
+              <div class="mb-6">
+                <h4 class="text-sm font-semibold mb-3 text-green-400">
+                  주요 기능
+                </h4>
+                <ul class="text-sm text-gray-400 space-y-1">
+                  <li>• AWS EC2/RDS/S3 구축</li>
+                  <li>• Docker 컨테이너화</li>
+                  <li>• CI/CD 파이프라인</li>
+                  <li>• 로드밸런서 및 오토스케일링</li>
+                </ul>
+              </div>
+              <div class="flex flex-wrap gap-2 mb-6">
+                <span
+                  class="bg-orange-600/20 border border-orange-600/30 px-3 py-1 rounded-full text-xs text-orange-300"
+                  >AWS</span
+                >
+                <span
+                  class="bg-blue-600/20 border border-blue-600/30 px-3 py-1 rounded-full text-xs text-blue-300"
+                  >Docker</span
+                >
+                <span
+                  class="bg-green-600/20 border border-green-600/30 px-3 py-1 rounded-full text-xs text-green-300"
+                  >Kubernetes</span
+                >
+                <span
+                  class="bg-purple-600/20 border border-purple-600/30 px-3 py-1 rounded-full text-xs text-purple-300"
+                  >Jenkins</span
+                >
+              </div>
+              <button
+                class="w-full bg-gradient-to-r from-green-600 to-teal-600 text-white py-3 rounded-xl font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-300"
+              >
+                프로젝트 상세보기 →
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
