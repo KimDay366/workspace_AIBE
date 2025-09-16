@@ -1,0 +1,113 @@
+@font-face {
+  font-family: "GowoonDodum";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunDodum-Regular.woff")
+    format("woff");
+  font-weight: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Thin.woff")
+    format("woff");
+  font-weight: 100;
+  font-display: swap;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Pretendard";
+  background-color: #f5efe6;
+  margin: 0;
+  padding-bottom: 20px;
+}
+
+body > section {
+  padding: 25px;
+  padding-bottom: 0;
+}
+
+.title,
+.info h2 {
+  font-family: "GowoonDodum";
+}
+
+h1 {
+  background-color: #7b9acc;
+  color: #fcf6f5;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+h2 {
+  margin-bottom: 10px;
+  font-weight: 800;
+  border-bottom: 2px solid #444;
+  padding: 5px 0;
+}
+
+h3 {
+  font-weight: 500;
+}
+
+.info {
+  padding: 10px 20px 20px;
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+#tech-stack ul {
+  display: flex;
+  list-style-type: none;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+
+#tech-stack ul li {
+  width: 130px;
+  aspect-ratio: 0.9;
+  background-color: #cbdceb;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  padding: 8px 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+#tech-stack img {
+  width: 70%;
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 8px;
+}
+
+#tech-stack span {
+  width: 100%;
+  text-align: center;
+}
+
+#portfolio div.box {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+#portfolio div.item {
+  border-bottom: 2px dotted #cbdceb;
+  padding: 10px 0 20px;
+}
+
+#portfolio div.item:last-child {
+  border-bottom: 0;
+  padding-bottom: 10px;
+}

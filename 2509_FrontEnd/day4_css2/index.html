@@ -11,49 +11,8 @@
     />
 
     <title>Hello, JS!</title>
-    <style>
-      @font-face {
-        font-family: "GowoonDodum";
-        src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunDodum-Regular.woff")
-          format("woff");
-        font-weight: normal;
-        font-display: swap;
-      }
-
-      @font-face {
-        font-family: "Pretendard";
-        src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Thin.woff")
-          format("woff");
-        font-weight: 100;
-        font-display: swap;
-      }
-
-      body {
-        font-family: "Pretendard";
-      }
-
-      .title,
-      .info h2 {
-        font-family: "GowoonDodum";
-      }
-
-      * {
-        box-sizing: border-box;
-      }
-
-      body {
-        margin: 0;
-        padding: 25px;
-      }
-
-      h1 {
-        background-color: #7b9acc;
-        color: #fcf6f5;
-        padding: 5px 10px;
-        border-radius: 4px;
-      }
-    </style>
     <link href="https://emoji-css.afeld.me/emoji.css" rel="stylesheet" />
+    <link href="./maincss.css" rel="stylesheet" />
 
     <link
       rel="apple-touch-icon"
@@ -75,21 +34,65 @@
     <link rel="manifest" href="./site.webmanifest" />
   </head>
   <body>
-    <h1 class="title">안녕하세요! 만나서 반갑습니다 🤝</h1>
-    <div class="info">
-      <h2>자기소개</h2>
-      <p>
-        아이디어를 구체적인 서비스로 구현하는 걸 좋아하는, 기획과 개발을 잇는
-        사람입니다. 꼼꼼하고 섬세하게 기획하여 다소 느린 편이지만, 그만큼 꾸준히
-        노력 해 나가는 스타일입니다.
-      </p>
-    </div>
+    <section id="intro">
+      <h1 class="title">안녕하세요! 만나서 반갑습니다 🤝🏻</h1>
+      <div class="info">
+        <h2>자기소개</h2>
+        <p>
+          다양한 아이디어를 조합하고, 이를 바탕으로 구체적인 서비스로 구현하는
+          걸 좋아합니다. 꼼꼼하고 섬세하게 기획하여 다소 느린 편이지만, 그만큼
+          <strong>꾸준히 노력 해 나가는 스타일</strong>입니다.
+        </p>
+      </div>
+    </section>
 
-    <div class="info">
-      <h2>스킬 정보</h2>
-      <p>프런트 개발 스킬 : HTML / CSS / JS</p>
-      <p>기획 스킬 : 피그마</p>
-      <p>일반 사무 스킬 : 엑셀, PPT, 워드, 한글</p>
-    </div>
+    <section id="tech-stack">
+      <div class="info">
+        <h2>기술 스택</h2>
+        <ul>
+          <li><img src="./java.png" alt="java" /><span>Java</span></li>
+          <li>
+            <img src="./spring-boot.png" alt="Spring Boot" /><span
+              >Spring Boot</span
+            >
+          </li>
+          <li><img src="./mysql.png" alt="MySQL" /><span>MySQL</span></li>
+          <li><img src="./amazon.png" alt="AWS" /><span>AWS</span></li>
+          <li><img src="./github.png" alt="GitHub" /><span>GitHub</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="portfolio">
+      <div class="info">
+        <h2>포트폴리오</h2>
+        <div class="box">
+          <div class="item">
+            <h3>여행 추천 프로젝트</h3>
+            <p>
+              사용자의 취향이나 성향을 기반으로 여행지를 추천하는 서비스, DB에
+              여행지/코스/리뷰 등의 데이터를 넣고 사용자에 따라 필터링 혹은 추천
+              알고리즘 적용
+            </p>
+          </div>
+          <div class="item">
+            <h3>재능 매칭 프로젝트</h3>
+            <p>
+              사용자 프로필, 카테고리별 재능/스펙/기술등을 등록하여, 다른
+              사용자와 매칭(키워드 기반 or AI 간단 추천) 기능. 사용자들이 실제
+              사용 할 채팅 or 예약 시스템 구현
+            </p>
+          </div>
+          <div class="item">
+            <h3>AWS 인프라 프로젝트</h3>
+            <p>
+              클라우드 환경에서 직접 서버/DB/스토리지 올려보고 운영해보는 실습.
+              EC2 인스턴스 띄우기, RDS 세팅, S3에 정적 파일 올리기, 도메인 연결,
+              로드밸런서/오토스케일링 실습 진행
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
   </body>
 </html>
