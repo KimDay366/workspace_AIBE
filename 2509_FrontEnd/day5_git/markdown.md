@@ -96,8 +96,10 @@ const ment = "hello world";
 <br>
 
 - 링크 사용하기<br>
-  네이버 가져오기 https://www.naver.com/ <br>
-  이미지 불러오기 ![무지개] https://unsplash.com/ko/%EC%82%AC%EC%A7%84/%ED%95%98%EB%8A%98%EC%97%90-%EB%AC%B4%EC%A7%80%EA%B0%9C-t02XukS9dUU
+[링크 버튼](링크내용) <br>
+![이미지 이름](링크 내용) <br>
+  [네이버 가져오기](https://www.naver.com/) <br>
+  ![무지개](https://unsplash.com/ko/%EC%82%AC%EC%A7%84/%ED%95%98%EB%8A%98%EC%97%90-%EB%AC%B4%EC%A7%80%EA%B0%9C-t02XukS9dUU)
 
 <br>
 <br>
