@@ -96,8 +96,8 @@ const ment = "hello world";
 <br>
 
 - 링크 사용하기<br>
-네이버 가져오기 https://www.naver.com/ <br>
-이미지 불러오기 https://unsplash.com/ko/%EC%82%AC%EC%A7%84/%ED%95%98%EB%8A%98%EC%97%90-%EB%AC%B4%EC%A7%80%EA%B0%9C-t02XukS9dUU
+  네이버 가져오기 https://www.naver.com/ <br>
+  이미지 불러오기 ![무지개] https://unsplash.com/ko/%EC%82%AC%EC%A7%84/%ED%95%98%EB%8A%98%EC%97%90-%EB%AC%B4%EC%A7%80%EA%B0%9C-t02XukS9dUU
 
 <br>
 <br>
@@ -108,8 +108,8 @@ const ment = "hello world";
 
 - 체크박스
 
-[] 체크박스 만들면 <br>
-[x] 이렇게 나옵니다
+- [ ] 체크박스 만들면 <br>
+- [x] 이렇게 나옵니다
 
 - 표
 
